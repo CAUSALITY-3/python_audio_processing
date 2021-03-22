@@ -1,15 +1,14 @@
 import librosa, librosa.display
-import IPython.display as ipd
 import matplotlib.pyplot as plt
-import numpy as np
 
-x="s2.wav"
-x1, sr =librosa.load(x)
-print(x1.size)
+x="s2.wav"                   # audio source 
+audio, sr = librosa.load(x)  # sr = sample rate (no. of amplitude values per sec)
+                             # audio = gives all amplitude values in the form of an array
 
-plt.figure(figsize=(15,17))
-plt.subplot(3,1,1)
-librosa.display.waveplot(x1)
-plt.title("x1")
+
+# plottin audio amplitude vs time
+plt.figure(figsize=(10,5))
+librosa.display.waveplot(audio)  
+plt.title("audio")
 plt.ylim((-1,1))
 plt.show()
